@@ -22,13 +22,13 @@ def classify(close_val,open_val):
                                                                         
     return np.array(classes)                	
 
-def error_classes(True_classes,Predicted_classes):
-    error_val=[]
+def accuracy(True_classes,Predicted_classes):
+    acc_val=[]
     for i in range(len(Predicted_classes)-1):
         if Predicted_classes[i] == True_classes[i]:
-            error_val.append(0)
+            acc_val.append(1)
         else :    
-            error_val.append(1)
-    error_percent = 100 * (np.sum(error_val))/len(error_val)
-    return error_percent        
+            acc_val.append(0)
+    acc_percent = 100 * (np.sum(acc_val))/len(acc_val)
+    return acc_percent        
         
